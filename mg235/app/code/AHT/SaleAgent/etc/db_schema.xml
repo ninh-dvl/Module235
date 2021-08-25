@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="aht_sales_agent" resource="default" engine="innodb" comment="Sales Agent Table">
+        <column xsi:type="int" name="entity_id" padding="11" unsigned="true" nullable="false" identity="true" comment=""/>
+        <column xsi:type="int" name="order_id" padding="11" unsigned="true" nullable="false" default="0" comment=""/>
+        <column xsi:type="int" name="order_item_id" padding="11" unsigned="true" nullable="false" default="0" comment=""/>
+        <column xsi:type="varchar" name="order_item_sku" length="64"  nullable="false" default="" comment=""/>
+        <column xsi:type="float" name="order_item_price" unsigned="true" nullable="false" default="0" comment=""/>
+        <column xsi:type="smallint" name="commision_type" padding="5" unsigned="true" nullable="false" identity="false" default="0" comment="Required Options"/>
+        <column xsi:type="float" name="commission_value" unsigned="false" nullable="false" default="0" comment="commission value"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Creation Time"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Update Time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <index referenceId="UNIT6_COMPUTER_GAME_NAME_TYPE" indexType="fulltext">
+            <column name="order_item_sku"/>
+    </index>
+    </table>
+    <table name="commission_type" resource="default" engine="innodb" comment="Sales Agent Table">
+        <column xsi:type="int" name="type_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Commsion type ID"/>
+        <column xsi:type="varchar" name="type_name" nullable="true" length="64" comment="Type Name"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+                <column name="type_id"/>
+        </constraint>
+</table>
+</schema>

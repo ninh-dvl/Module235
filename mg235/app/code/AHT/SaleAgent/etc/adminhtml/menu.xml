@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="AHT_SaleAgent::commission_sale" title="Sale Commisstion" module="AHT_SaleAgent" sortOrder="10" action="saleagent/salecommission" resource="AHT_SaleAgent::commission" parent="Magento_Reports::report_products"/>
+    </menu>
+</config>

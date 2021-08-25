@@ -1,0 +1,33 @@
+<!--The 'step_code' value from the .js file should be used-->
+<li id="stepCode" data-bind="fadeVisible: isVisible">
+    <div class="step-title" data-bind="i18n: 'Step Title'" data-role="title"></div>
+    <div id="checkout-step-title"
+         class="step-content"
+         data-role="content">
+
+        <form data-bind="submit: navigateToNextStep" id="delivery-checkout-form" class="form" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}}">
+            <div class="field_required" name="delivery.date">
+                <label for="date" class="label">
+                    Delivery Date
+                </label>
+                <div class="control">
+                    <input type="date" name="date" id="date">
+                </div>
+            </div>
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <label>Delivery comment</label>
+                    <input type="text" name="comment"/>
+                </div>
+            </div>
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button data-role="opc-continue" type="submit" class="button action continue primary">
+                        <span><!-- ko i18n: 'Next'--><!-- /ko --></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</li>
+
