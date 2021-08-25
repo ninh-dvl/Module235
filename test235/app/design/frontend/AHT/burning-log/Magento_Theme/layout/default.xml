@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock remove="true" name="copyright"/>
+        <referenceBlock remove="true" name="footer_links"/>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Framework\View\Element\Template" name="header.top" template="Magento_Theme::header-top.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="footer">
+            <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" after="footer_links" template="Magento_Store::switch/stores.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="footer-container">
+            <block class="Magento\Framework\View\Element\Template" name="footer.showroom"  template="Magento_Theme::footer-showroom.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="footer.banner" after="footer.showroom" template="Magento_Theme::footer-banner.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="footer.top" after="footer.banner" template="Magento_Theme::footer-top.phtml"/>
+            <container name="middle.content" htmlTag="div" htmlClass="footer-middle">
+                <block class="Magento\Cms\Block\Block" name="footer_middle">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_middle</argument>
+                    </arguments>    
+                </block>
+                <container name="newsletter.main" htmlTag="div" htmlClass="content4">
+                    <container name="newsletter.content" htmlTag="div" htmlClass="newsletter-title">
+                        <block class="Magento\Cms\Block\Block" name="footer_newsletter">
+                            <arguments>
+                                <argument name="block_id" xsi:type="string">footer_newsletter</argument>
+                            </arguments>  
+                        </block>
+                    </container>
+                    <container name="newsletter.content1" htmlTag="div" htmlClass="newsletter-social">
+                        <block class="Magento\Cms\Block\Block" name="footer_newsletter_icon" >
+                            <arguments>
+                                <argument name="block_id" xsi:type="string">footer_newsletter_icon</argument>
+                            </arguments>  
+                        </block>
+                    </container>
+                </container>
+                <container name="middle.content2" htmlTag="div" htmlClass="footer-middle-moblie">
+                <block class="Magento\Cms\Block\Block" name="footer-middle-mobile">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-middle-mobile</argument>
+                    </arguments>    
+                </block>
+                </container>
+            </container>
+            <block class="Magento\Framework\View\Element\Template" name="footer.bottom" after="middle.content" template="Magento_Theme::footer-bottom.phtml"/>
+        </referenceContainer>
+        <referenceBlock name="report.bugs" remove="true"/>
+        <move element="copyright" destination="before.body.end"/>
+    </body>
+</page>

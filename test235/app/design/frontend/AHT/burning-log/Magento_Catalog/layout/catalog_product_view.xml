@@ -1,0 +1,43 @@
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.attributes" remove="true" />
+        <referenceContainer name="content">
+            <referenceContainer name="product.info.stock.sku" remove="true" />
+            <referenceBlock name="product.info.details">
+                <block class="Magento\Framework\View\Element\Template" name="description.return" template="Magento_Catalog::description.phtml" group="detailed_info">
+                    <arguments>
+                        <argument translate="true" name="title" xsi:type="string">Description</argument>
+                        <argument name="sort_order" xsi:type="string">20</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Template" name="warranty.return" template="Magento_Catalog::warranty.phtml" group="detailed_info">
+                    <arguments>
+                        <argument translate="true" name="title" xsi:type="string">Care &#38; Warranty</argument>
+                        <argument name="sort_order" xsi:type="string">20</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Template" name="shipping.return" template="Magento_Catalog::shipping.phtml" group="detailed_info">
+                    <arguments>
+                        <argument translate="true" name="title" xsi:type="string">shipping &#38; delivery</argument>
+                        <argument name="sort_order" xsi:type="string">20</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Template" name="installation.return" template="Magento_Catalog::installation.phtml" group="detailed_info">
+                    <arguments>
+                        <argument translate="true" name="title" xsi:type="string">installation requirements</argument>
+                        <argument name="sort_order" xsi:type="string">20</argument>
+                    </arguments>
+                </block>
+            </referenceBlock>
+            <referenceContainer name="product.info.main">
+                <block class="Magento\Catalog\Block\Product\View\Attributes" name="product.attributes.sale.preorder" template="Magento_Catalog::product/view/sale-preorder.phtml"></block>
+            </referenceContainer>
+        </referenceContainer>
+        <referenceContainer name="product.info.stock.sku" remove="true" />
+        <referenceBlock name="reviews.tab" remove="true" />
+        <referenceBlock name="product.review.form" remove="true" />
+        <referenceBlock name="product.info.review" remove="true" />
+        <referenceContainer name="product.info.social" remove="true" />
+        <move element="page.main.title" destination="product.info.main" before="-" />
+    </body>
+</page>

@@ -1,0 +1,69 @@
+<div class="row">
+<div class="col col-6">
+<h2>Buttons</h2>
+<p><button class="action primary" type="button">Add to cart </button> <button class="action primary secondary" type="button">Standard </button></p>
+<p class="quantity"><button class="action primary " type="button">+</button><input class="input-adjust" type="number"><button class="action primary button-adjust" type="button">-</button></p>
+<h2>Checkboxes &amp; Radio Buttons</h2>
+<p><input checked="checked" name="r1" type="radio"><label for="r1">Selected</label></p>
+<p><input name="r" type="radio"><label for="r2">Not Selected</label></p>
+<p><input checked="checked" disabled="disabled" name="r" type="radio"><label for="r1">Selected,Disabled</label></p>
+<p><input disabled="disabled" name="r" type="radio"><label for="r2"> Disabled</label></p>
+<p><input checked="checked" name="" type="checkbox"><label for="r3">Ticked</label></p>
+<p><input name="" type="checkbox"><label for="r4">Not Ticked </label></p>
+<p><input checked="checked" disabled="disabled" name="" type="checkbox"><label for="r3">Ticked, Disabled</label></p>
+<p><input disabled="disabled" name="" type="checkbox"><label for="r4">Disabled</label></p>
+<h2>Input Fields</h2>
+<p><label for="fname"></label> <input id="fname" name="fname" type="text"></p>
+<div class="control"><select id="select" name="select">
+<option value="">Dropdown field</option>
+<option value="5">5</option>
+<option value="10">10</option>
+<option value="15">15</option>
+<option value="20">20</option>
+</select></div>
+<p>&nbsp;</p>
+<p><input class="mage-error" type="text"></p>
+<div class="mage-error">Please enter a valid email address</div>
+<h2>Navigation</h2>
+<dl class="navigation-tab" data-sections="tabs">
+<dt class="item title active" data-section="title"><a class="switch" href="#product.info.description" data-toggle="switch">Details</a></dt>
+<dd class="item content active" data-section="content">
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+</dd>
+<dt class="item title" data-section="title"><a class="switch" href="#product_tags" data-toggle="switch">Tags</a></dt>
+<dd class="item content" data-section="content">
+<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+</dd>
+<dt class="item title" data-section="title"><a class="switch" href="#product_reviews" data-toggle="switch">Reviews</a></dt>
+<dd class="item content" data-section="content">
+<p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</dd>
+</dl>
+<div class="actions dropdown example-dropdown-1">&nbsp;</div>
+<p>&nbsp;</p>
+</div>
+<div class="col col-6">
+<h2>Alerts</h2>
+<p>&nbsp;</p>
+<div class="message error">
+<div>Invalid username or password</div>
+</div>
+<div class="message success">
+<div>Product has been added to your shopping bag</div>
+</div>
+<h2>Typography</h2>
+<p>Open Sans Regular - 13px / 20px</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h2>Text Link</h2>
+<p><a>Text Link</a></p>
+<h1>h1 Lora Regular - 32px</h1>
+<h2>h2 Lora Regular - 24px</h2>
+<h3>h3 Lora Regular - 18px</h3>
+<h4>h4 Roboto Bold - 15px</h4>
+<h2>Misc</h2>
+<p><a class="fas fa-times" href="#"><span class="label"> close</span> </a> <a class="fab fa-facebook-f" href="#"> <span class="label"> facebook</span> </a> <a class="fab fa-instagram" href="#"> <span class="label"> instagram</span> </a> <a class="fab fa-twitter" href="#"> <span class="label"> twitter</span> </a></p>
+</div>
+</div>
+<div class="block-promo-wrapper block-promo-2columns"><a class="block-promo" href="#"> <img src="{{media url="wysiwyg/bl_homepage_v10.jpg"}}" alt=""> </a>
+<h2 class="title title-tile">Outdoor Dining</h2>
+<a class="block-promo" href="#"><span class="content"><button class="more icon">Shop Fitness</button> </span> </a></div>
