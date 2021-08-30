@@ -1,4 +1,5 @@
 define([
+    'jquery',
     'ko',
     'uiComponent',
     'underscore',
@@ -6,7 +7,9 @@ define([
     'Magento_Checkout/js/model/quote',
     'mage/url',
     'mage/storage'
-], function (ko,
+], function (
+            $,
+            ko,
             Component,
             _,
             stepNavigator,
@@ -27,7 +30,8 @@ define([
 
         // add here your logic to display step,
         isVisible: ko.observable(true),
-
+        stepCode:'stepCode',
+        stepTitle:'Delivery step',
         /**
          * @returns {*}
          */
@@ -37,12 +41,11 @@ define([
             // register your step
             stepNavigator.registerStep(
                 // step code will be used as step content id in the component template
-                'stepCode',
-                // step alias
+                this.stepCode,
+                //step alias
                 null,
-                // step title value
-                'Delivery Step',
-                // observable property with logic when display step or hide step
+                this.stepTitle,
+                //observable property with logic when display step or hide step
                 this.isVisible,
 
                 _.bind(this.navigate, this),
@@ -73,15 +76,20 @@ define([
          * @returns void
          */
         navigateToNextStep: function () {
-           var date = $("input[name=date]").val();
-           var comment = $("input[name=comment]").val();
+           var date = $("[name=date]").val();
+           var comment = $("[name=comment]").val();
 
            var quoteId = quote.getQuoteId();
            var url = urlBuilder.build('checkout/index/savequote');
            storage.post(
                url,
-               JSON.stringify({})
-           )
+               JSON.stringify({quoteId:quoteId , date:date , comment:comment}),
+               false
+           ).done(
+               function (respone) {
+                   stepNavigator.next();
+               }
+           ).fail();
         }
     });
 });
